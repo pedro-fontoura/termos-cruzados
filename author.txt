@@ -1,0 +1,7 @@
+Termos Cruzados: Jogo de palavras que testa a desenvolve o vocabulário.
+
+Foi criado por:
+Pedro Fontoura, fontoura.pedro@gmail.com
+Março de 2022
+
+Tecnologias: HTML, CSS, Javascript
