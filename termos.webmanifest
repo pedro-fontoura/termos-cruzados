@@ -1,0 +1,16 @@
+{
+    "name": "Termos Cruzados",
+    "short_name": "Termos",
+    "description": "Jogo de palavras que testa a desenvolve o vocabulário.",
+    "icons": [
+        {
+            "src": "images/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "index.html",
+    "display": "fullscreen",
+    "theme_color": "#6C584C",
+    "background_color": "#6C584C"
+}
