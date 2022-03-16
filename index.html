@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta name="generator" content=
+"HTML Tidy for HTML5 for Windows version 5.9.14">
+<meta charset="utf-8">
+<title>Termos Cruzados</title>
+<meta name="description" content=
+"Jogo de palavras que testa a desenvolve o vocabulário">
+<meta name="keywords" content=
+"jogo, palavras, vocabulário, portugal">
+<meta name="author" content="Pedro Fontoura">
+<link rel="author" href="author.txt">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<meta name="viewport" content=
+"width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0, viewport-fit=cover">
+<meta name="theme-color" content="#6C584C">
+<script type="text/javascript" src=
+"libs/lz-string.min.js"></script>
+<link type="text/css" rel="stylesheet" href="termos.css">
+<script type="text/javascript" src="termos.js"></script>
+</head>
+<body>
+<section id="AppViewport">
+<section id="AppPagesContainer">
+<section id="Home" class="AppPage">
+<div id="HomeBody" class="PageBody Init">
+<h1>Termos Cruzados</h1>
+<h2>Testa o teu<br>
+vocabulário!</h2>
+<p class="note">Android: APK disponível.</p>
+</div>
+<div class="PageFooter">
+<p id="btn_play" class="FooterButton"><img alt="" src=
+"icons/play_circle_black_24dp.svg"></p>
+<p id="btn_stats" class="FooterButton"><img alt="" src=
+"icons/leaderboard_black_24dp.svg"></p>
+<p id="btn_settings" class="FooterButton"><img alt="" src=
+"icons/settings_black_24dp.svg"></p>
+<p id="btn_info" class="FooterButton"><img alt="" src=
+"icons/info_black_24dp.svg"></p>
+</div>
+</section>
+<section id="Settings" class="AppPage">
+<div class="PageBody">
+<h1>Definições</h1>
+<ul>
+<li><input type="checkbox" id="sound"> <label for=
+"sound">Som</label></li>
+<li><input type="checkbox" id="special_help"> <label for=
+"special_help">Ajuda visual</label></li>
+<li><input type="checkbox" id="cell_caption"> <label for=
+"cell_caption">Contadores nas letras</label></li>
+<li><input type="checkbox" id="hearts"> <label for=
+"hearts">Vidas</label></li>
+</ul>
+<p>Ver definições com:</p>
+<ul>
+<li><input type="radio" id="def_word_0" name="def_word" value=
+"priberam"> <label for="def_word_0">Priberam</label></li>
+<li><input type="radio" id="def_word_1" name="def_word" value=
+"infopedia"> <label for="def_word_1">Infopédia</label></li>
+</ul>
+<p>Importar e exportar desafios:</p>
+<ul>
+<li>Desafio em uso: <span id="data_seeds"></span></li>
+<li id="setings_seeds"><button id="cancel_seeds">Cancelar</button>
+<button id="import_seeds">Importar</button> <button id=
+"export_seeds">Exportar</button></li>
+</ul>
+</div>
+<div class="PageFooter">
+<p id="btn_back_Settings" class="FooterButton"><img alt="" src=
+"icons/chevron_left_black_24dp.svg"></p>
+</div>
+</section>
+<section id="Solutions" class="AppPage">
+<div class="PageBody">
+<h1>Soluções</h1>
+<div id="SolutionsList"></div>
+</div>
+<div class="PageFooter">
+<p id="btn_back_Solutions" class="FooterButton" data-target="Play">
+<img alt="" src="icons/chevron_left_black_24dp.svg"></p>
+<p id="btn_errors" class="FooterButton"><img alt="" src=
+"icons/error_outline_black_24dp.svg"></p>
+<p id="btn_hint" class="FooterButton"><img alt="" src=
+"icons/question_mark_black_24dp.svg"></p>
+</div>
+</section>
+<section id="Errors" class="AppPage">
+<div class="PageBody">
+<h1>Não validadas</h1>
+<div id="ErrorsList"></div>
+</div>
+<div class="PageFooter">
+<p id="btn_back_Errors" class="FooterButton" data-target=
+"Solutions"><img alt="" src=
+"icons/chevron_left_black_24dp.svg"></p>
+</div>
+</section>
+<section id="Statistics" class="AppPage">
+<div class="PageBody">
+<h1>Estatísticas</h1>
+<table id="TableStats">
+<tr>
+<td>Desafios iniciados:</td>
+<td><span id="txt_stats_games_start"></span></td>
+</tr>
+<tr>
+<td>Desafios concluídos:</td>
+<td><span id="txt_stats_games_end"></span></td>
+</tr>
+<tr>
+<td>Desempenho médio:</td>
+<td><span id="txt_stats_performance"></span>%</td>
+</tr>
+<tr>
+<td>Palavras descobertas:</td>
+<td><span id="txt_stats_words_ok"></span></td>
+</tr>
+<tr>
+<td>Palavras inexistentes:</td>
+<td><span id="txt_stats_words_nk"></span></td>
+</tr>
+<tr>
+<td>Sucesso médio:</td>
+<td><span id="txt_stats_success"></span>%</td>
+</tr>
+<tr>
+<td>Ajudas usadas:</td>
+<td><span id="txt_stats_hints"></span></td>
+</tr>
+<tr>
+<td>Mortes:</td>
+<td><span id="txt_stats_deaths"></span></td>
+</tr>
+</table>
+</div>
+<div class="PageFooter">
+<p id="btn_back_Statistics" class="FooterButton"><img alt="" src=
+"icons/chevron_left_black_24dp.svg"></p>
+<p id="btn_delete" class="FooterButton"><img alt="" src=
+"icons/delete_outline_black_24dp.svg"></p>
+</div>
+</section>
+<section id="Info" class="AppPage">
+<div class="PageBody">
+<h1>Sobre o jogo</h1>
+<div id="InfoMain">
+<h2>Termos Cruzados</h2>
+<p>Um jogo de palavras que testa e desenvolve o vocabulário.</p>
+<h2>Como jogar?</h2>
+<ul>
+<li>Toca numa letra: ela move-se para a linha central.</li>
+<li>Quando formares uma palavra na linha central, valida-a.</li>
+</ul>
+<h2>Atenção:</h2>
+<ul>
+<li>Variações em género e número são aceites.</li>
+<li>Conjugações verbais, também.</li>
+<li>Siglas e nomes próprios, não.</li>
+</ul>
+<p class="note">Nota: é usada uma versão aumentada duma lista de
+palavras disponibilizada pelo <i>Projeto Natura</i> da Universidade
+do Minho.</p>
+<h2>Autor:</h2>
+<ul>
+<li>Pedro Fontoura <span class=
+"note">fontoura.pedro(at)gmail</span></li>
+<li>Março de 2022</li>
+</ul>
+</div>
+</div>
+<div class="PageFooter">
+<p id="btn_back_Info" class="FooterButton"><img alt="" src=
+"icons/chevron_left_black_24dp.svg"></p>
+</div>
+</section>
+<section id="Play" class="AppPage">
+<div class="PageBody"></div>
+<div class="PageFooter">
+<p id="btn_back_Play" class="FooterButton"><img alt="" src=
+"icons/chevron_left_black_24dp.svg"></p>
+<p id="btn_restart" class="FooterButton"><img alt="" src=
+"icons/cached_black_24dp.svg"></p>
+<p id="btn_hearts" class="FooterButton"><img alt="" src=
+"icons/favorite_black_24dp.svg"> <span id="txt_hearts"></span></p>
+<p id="btn_solutions" class="FooterButton"><img alt="" src=
+"icons/fact_check_black_24dp.svg"></p>
+<p id="btn_validate" class="FooterButton"><img alt="" src=
+"icons/done_black_24dp.svg"></p>
+</div>
+</section>
+<section id="GameOver" class="AppPage">
+<div class="PageBody">
+<div id="GameOverStats">
+<h1>&nbsp;</h1>
+<div id="GameOverStars"><span id="star_1">★</span> <span id=
+"star_2">★</span> <span id="star_3">★</span> <span id=
+"star_4">★</span> <span id="star_5">★</span></div>
+<p><span id="txt_gos_found"></span> / <span id=
+"txt_gos_all"></span></p>
+<p id="gos_time"><span id="txt_gos_time"></span></p>
+<p id="ShareButtons"><span id="facebook" class=
+"ShareBtn">Facebook</span> • <span id="twitter" class=
+"ShareBtn">Twitter</span></p>
+</div>
+</div>
+<div class="PageFooter">
+<p id="btn_back_GameOver" class="FooterButton" data-target="Play">
+<img alt="" src="icons/chevron_left_black_24dp.svg"></p>
+</div>
+</section>
+</section>
+</section>
+</body>
+</html>
