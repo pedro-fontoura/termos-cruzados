@@ -61,12 +61,15 @@ self.addEventListener(
 		evt.respondWith(
 			(
 				async () => {
-					console.log(`[Service Worker] Fetching resource: ${evt.request.url}`);
+					console.log( "[Service Worker] Fetching resource: " + ${evt.request.url );
 					const RESPONSE_CACHE = await caches.match( evt.request );
 					if ( RESPONSE_CACHE ) {
-						console.log( "[Service Worker] Response from CACHE" );
 						return RESPONSE_CACHE;
 					}
+					
+					console.warn(
+						"[Service Worker] Fetching LIVE resource: " + evt.request.url
+					);
 					
 					const RESPONSE_NET = await fetch( evt.request );
 					const CACHE = await caches.open( CACHE_NAME );
