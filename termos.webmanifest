@@ -4,8 +4,8 @@
     "description": "Jogo de palavras que testa a desenvolve o vocabulário.",
     "icons": [
         {
-            "src": "images/icon-512.png",
-            "sizes": "512x512",
+            "src": "images/icon-64.png",
+            "sizes": "64x64",
             "type": "image/png"
         }
     ],
