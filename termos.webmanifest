@@ -14,8 +14,11 @@
             "type": "image/png"
         }
     ],
-    "start_url": "index.html",
-    "display": "fullscreen",
+    "start_url": ".",
+    "display": "standalone",
     "theme_color": "#6C584C",
-    "background_color": "#6C584C"
+    "background_color": "#6C584C",
+	"orientation": "portrait-primary",
+	"categories": ["entertainment", "games", "words"],
+	"lang": "pt-PT"
 }
